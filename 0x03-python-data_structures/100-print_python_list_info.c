@@ -1,12 +1,11 @@
 #include <Python.h>
-#include <object.h>
-#include <listobject.h>
+#include <stdio.h>
 
 /**
  * print_python_list_info - func that prints basic info about python lists
  * @p: Pyobject list
  *
- * Return: nothing
+ * Return: Always 0. 
  */
 void print_python_list_info(PyObject *p)
 {
