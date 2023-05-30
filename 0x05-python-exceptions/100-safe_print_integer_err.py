@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+import sys
+
+
 def safe_print_integer_err(value):
     """Print an integer value and return
     True if value is an integer, otherwise
