@@ -11,3 +11,6 @@ def magic_calculation(a, b):
             res = b + a
             break
         return (res)
+
+res = magic_calculation(2, 3)
+print(res)
