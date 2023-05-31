@@ -1,9 +1,10 @@
 #!/usr/bin/python3
+# 0-square.py by Chioma Igwe
 """Defines a square"""
 
 
 class Square:
-    """Describes a class square"""
+    """Describes a class Square"""
 
     def __init__(self, size=0):
         """initializes a square class
