@@ -1,0 +1,83 @@
+Test cases for 0-add_integer.py
+===============================
+
+The module describes an addition of integer function "add_integer(a, b=98)"
+
+Usage
+=====
+
+The module returns the addtion of two arguments, 'a' and 'b'.
+>>> add_integer = __import__('0-add_integer').add_integer
+
+# Test case 1: Positive integers
+>>> add_integer(1, 2)
+3
+
+# Test case 2: A positive and a negative integers
+>>> add_integer(100, -2)
+98
+
+# Test case 3:Floating-point values
+>>> add_integer(2.0, 3.0)
+5
+
+Test case 4: Floats casted to ints
+>>> add_integer(2.0, 0.9)
+2
+
+# Test case 5: Negative floats casted to ints
+>>> add_integer(-2.0, -0.9)
+-2
+
+# Test case 6: Combining floats and non-floating point values
+>>> add_integer(100.3, -2) 
+98
+
+# Test case 7: Second argument is optional (default value)
+>>> add_integer(2)
+100
+
+# Test case 8: TypeError raised when non-integer and non-float provided as first argument
+>>> add_integer(4, "School")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+# Test case 9: TypeError when non-integer and non-float provided as second argument
+>>> add_integer("School", "4")
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+# Test case 10: TypeError when None is provided as first argument
+>>> add_integer(None)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+# Test case 11: TypeError when None is provided as second argument
+>>> add_integer(2.9, None)
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+# Test case 12: TypeError only for the first argument when both are non-integers and non-floats
+add_integer("enter", "here")
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+# Test case 13: OverflowError when infinity is provided
+>>> add_integer(float('inf'))
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+
+# Test case 14: OverflowError when infinity is provided as the second argument
+>>> add_integer(2, float('inf'))
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+
+# Test case 15: ValueError when NaN is provided
+>>> add_integer(float('nan'))
+Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer
+
+# Test case 16: ValueError when NaN is provided as the second argument
+add_integer(2, float('nan'))
+Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer
