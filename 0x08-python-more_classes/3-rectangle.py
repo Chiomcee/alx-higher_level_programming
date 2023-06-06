@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""A class with a rectangle that does nothing""" 
+"""A class with a rectangle that does nothing"""
 
 
 class Rectangle:
@@ -63,4 +63,3 @@ class Rectangle:
             if column < self.__height - 1:
                 rectangle += "\n"
         return (rectangle)
-
