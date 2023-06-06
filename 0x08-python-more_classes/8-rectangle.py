@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """
-A module with a Rectangle that does nothing
+Class that defines a rectange
 """
 
 
 class Rectangle:
     """
-    An empty Rectangle class
+    Represents a rectangle class
     """
 
     number_of_instances = 0
@@ -14,10 +14,10 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """
-        Checks the parameters and initializes some values
+        Initializing and checking the rectangle class
         Args:
-            width (:obj:`int`, optional): The width of the Rectangle.
-            height (:obj:`int`, optional): The height of the Rectangle.
+            width: The width of the Rectangle.
+            height: The height of the Rectangle.
         """
 
         self.width = width
