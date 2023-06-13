@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This module defines a class MyInt which inherits from int"""
 
+
 class MyInt(int):
     """This class represents a rebel integer"""
 
