@@ -3,25 +3,20 @@
     then save to a file.
 """
 
-import json
+
 import sys
-from os import path
+import json
+import os.path
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
-def save_to_json_file(my_obj, filename):
-    with open(filename, mode='w', encoding='utf-8') as file:
-        json.dump(my_obj, file)
+file = "add_item.json"
+json_list = []
 
-def load_from_json_file(filename):
-    if path.exists(filename):
-        with open(filename, mode='r', encoding='utf-8') as file:
-            return json.load(file)
-    return []
+if os.path.exists(file):
+    json_list = load_from_json_file(file)
 
-if __name__ == "__main__":
-    arguments = sys.argv[1:]
-    filename = "add_item.json"
+for i in range(1, len(sys.argv)):
+    json_list.append(sys.argv[i])
 
-    my_list = load_from_json_file(filename)
-    my_list.extend(arguments)
-
-    save_to_json_file(my_list, filename)
+save_to_json_file(json_list, file)
