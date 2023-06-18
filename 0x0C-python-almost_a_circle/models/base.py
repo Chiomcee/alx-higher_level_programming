@@ -2,11 +2,6 @@
 """This is a module with a class that serve as a base for other classes"""
 
 
-import os
-import json
-import csv
-import turtle
-
 class Base:
     """A class representing base of all classes created"""
 
