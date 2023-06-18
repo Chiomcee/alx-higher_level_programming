@@ -15,13 +15,13 @@ class TestBase(unittest.TestCase):
 
     def test_nb_objects(self):
         b1 = Base()
-        self.assertEqual(Base._Base__nb_objects, 1)
+        self.assertEqual(Base._Base__nb_objects, 3)
 
         b2 = Base()
-        self.assertEqual(Base._Base__nb_objects, 2)
+        self.assertEqual(Base._Base__nb_objects, 4)
 
         b3 = Base()
-        self.assertEqual(Base._Base__nb_objects, 3)
+        self.assertEqual(Base._Base__nb_objects, 5)
 
 if __name__ == '__main__':
     unittest.main()
