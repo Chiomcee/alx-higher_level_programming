@@ -1,9 +1,14 @@
 #!/usr/bin/python3
+"""Unittests models/rectangle.py."""
+
+import io
+import sys
 import unittest
 from models.rectangle import Rectangle
 
 
 class TestRectangle(unittest.TestCase):
+
 
     def test_init(self):
         r1 = Rectangle(10, 20, 30, 40, 1)
@@ -72,6 +77,21 @@ class TestRectangle(unittest.TestCase):
         r3 = Rectangle(8, 7, 0, 0, 12)
         self.assertEqual(r3.area(), 56)
 
+    def test_display(self):
+        """Test display method"""
+        r1 = Rectangle(4, 6)
+        expected_output = "####n####n####n####n####n####n"
+        with StringIO() as fake_stdout:
+            sys.stdout = fake_stdout
+            r1.display()
+            self.assertEqual(fake_stdout.getvalue(), expected_output)
+
+        r2 = Rectangle(2, 2)
+        expected_output = "##n##n"
+        with StringIO() as fake_stdout:
+            sys.stdout = fake_stdout
+            r2.display()
+            self.assertEqual(fake_stdout.getvalue(), expected_output)
 
 if __name__ == '__main__':
     unittest.main()
