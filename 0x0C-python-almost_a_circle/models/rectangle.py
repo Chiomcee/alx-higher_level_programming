@@ -100,3 +100,23 @@ class Rectangle(Base):
             self.x = args[3]
         if len(args) >= 5:
             self.y = args[4]
+
+    def update(self, *args, **kwargs):
+        """ Method that assigns a key/value argument to attributes """
+        if args and len(args) > 0:
+            i = 0
+            for arg in args:
+                i += 1
+                if i == 1:
+                    self.id = arg
+                elif i == 2:
+                    self.width = arg
+                elif i == 3:
+                    self.height = arg
+                elif i == 4:
+                    self.x = arg
+                elif i == 5:
+                    self.y = arg
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
