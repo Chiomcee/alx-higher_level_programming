@@ -4,11 +4,11 @@
 import io
 import sys
 import unittest
+from io import StringIO
 from models.rectangle import Rectangle
 
 
 class TestRectangle(unittest.TestCase):
-
 
     def test_init(self):
         r1 = Rectangle(10, 20, 30, 40, 1)
@@ -92,6 +92,15 @@ class TestRectangle(unittest.TestCase):
             sys.stdout = fake_stdout
             r2.display()
             self.assertEqual(fake_stdout.getvalue(), expected_output)
+
+    def test_str(self):
+        r1 = Rectangle(4, 6, 2, 1, 12)
+        self.assertEqual(str(r1), "[Rectangle] (12) 2/1 - 4/6")
+
+    def test_area(self):
+        r1 = Rectangle(3, 5)
+        self.assertEqual(r1.area(), 15)
+
 
 if __name__ == '__main__':
     unittest.main()
