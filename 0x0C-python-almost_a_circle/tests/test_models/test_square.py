@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 import unittest
-from square import Square
+from models.square import Square
 
 class TestSquare(unittest.TestCase):
     def test_square_area(self):
