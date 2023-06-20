@@ -9,7 +9,7 @@ from models.rectangle import Rectangle
 
 
 class TestRectangle(unittest.TestCase):
-
+    """ """
     def test_init(self):
         r1 = Rectangle(10, 20, 30, 40, 1)
         self.assertEqual(r1.width, 10)
