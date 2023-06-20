@@ -12,14 +12,15 @@ class TestSquare(unittest.TestCase):
 
     def test_square_update(self):
         sq1 = Square(5)
-        sq1.update(10)
+        sq1.update(6, 10)
+        self.assertEqual(sq1.id, 6)
         self.assertEqual(sq1.area(), 100)
         sq1.update(7, 2, 3)
-        self.assertEqual(sq1.area(), 4 * 9)
+        self.assertEqual(sq1.area(), 4)
 
     def test_square_str(self):
         sq1 = Square(5)
-        self.assertEqual(str(sq1), "Square with side 5")
+        self.assertEqual(str(sq1), "[Square] (5) 0/0 - 5")
 
     def test_square_size_property(self):
         sq1 = Square(5)
@@ -37,5 +38,5 @@ class TestSquare(unittest.TestCase):
 
     def test_square_size_property_error(self):
         sq1 = Square(5)
-        with self.assertRaises(ValueError):
+        with self.assertRaises(TypeError):
             sq1.size = "9"

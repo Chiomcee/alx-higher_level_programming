@@ -80,14 +80,14 @@ class TestRectangle(unittest.TestCase):
     def test_display(self):
         """Test display method"""
         r1 = Rectangle(4, 6)
-        expected_output = "####n####n####n####n####n####n"
+        expected_output = "####\n####\n####\n####\n####\n####\n"
         with StringIO() as fake_stdout:
             sys.stdout = fake_stdout
             r1.display()
             self.assertEqual(fake_stdout.getvalue(), expected_output)
 
         r2 = Rectangle(2, 2)
-        expected_output = "##n##n"
+        expected_output = "##\n##\n"
         with StringIO() as fake_stdout:
             sys.stdout = fake_stdout
             r2.display()
