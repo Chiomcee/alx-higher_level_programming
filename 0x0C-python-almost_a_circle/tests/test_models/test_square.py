@@ -27,3 +27,15 @@ class TestSquare(unittest.TestCase):
         sq1.size = 7
         self.assertEqual(sq1.width, 7)
         self.assertEqual(sq1.height, 7)
+
+    def test_square_size_property(self):
+        sq1 = Square(5)
+        self.assertEqual(sq1.size, 5)
+        sq1.size = 7
+        self.assertEqual(sq1.width, 7)
+        self.assertEqual(sq1.height, 7)
+
+    def test_square_size_property_error(self):
+        sq1 = Square(5)
+        with self.assertRaises(ValueError):
+            sq1.size = "9"
