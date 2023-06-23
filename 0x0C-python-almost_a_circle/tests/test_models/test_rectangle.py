@@ -9,7 +9,7 @@ from models.rectangle import Rectangle
 
 
 class TestRectangle(unittest.TestCase):
-    """ """
+    """Testing rectangle """
     def test_init(self):
         r1 = Rectangle(10, 20, 30, 40, 1)
         self.assertEqual(r1.width, 10)
@@ -19,6 +19,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1.id, 1)
 
     def test_width(self):
+        """Testing width"""
         r1 = Rectangle(10, 20)
         r1.width = 30
         self.assertEqual(r1.width, 30)
@@ -30,6 +31,7 @@ class TestRectangle(unittest.TestCase):
             r1.width = -10
 
     def test_height(self):
+        """Testing height"""
         r1 = Rectangle(10, 20)
         r1.height = 30
         self.assertEqual(r1.height, 30)
@@ -41,6 +43,7 @@ class TestRectangle(unittest.TestCase):
             r1.height = -10
 
     def test_x(self):
+        """Testing Rectangle x getter and setter"""
         r1 = Rectangle(10, 20)
         r1.x = 30
         self.assertEqual(r1.x, 30)
@@ -52,6 +55,7 @@ class TestRectangle(unittest.TestCase):
             r1.x = -10
 
     def test_y(self):
+        """Testing Rectangle y getter and setter"""
         r1 = Rectangle(10, 20)
         r1.y = 30
         self.assertEqual(r1.y, 30)
@@ -94,10 +98,12 @@ class TestRectangle(unittest.TestCase):
             self.assertEqual(fake_stdout.getvalue(), expected_output)
 
     def test_str(self):
+        """Str test"""
         r1 = Rectangle(4, 6, 2, 1, 12)
         self.assertEqual(str(r1), "[Rectangle] (12) 2/1 - 4/6")
 
     def test_area(self):
+        """ """
         r1 = Rectangle(3, 5)
         self.assertEqual(r1.area(), 15)
 
